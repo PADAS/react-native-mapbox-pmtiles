@@ -148,6 +148,27 @@ Logs: `PMTiles served …` in the Xcode console, `adb logcat -s PMTiles` on Andr
 - **Offline base style.** Sources are added on top of the Mapbox style, which must already be cached (or replaced by a local `styleJSON`) for the map to load offline.
 - **Compression:** `gzip` or none. Brotli and Zstandard are not supported.
 
+## Tests
+
+Both PMTiles readers are tested against the same fixtures and expected results in `test/fixtures/`:
+
+| Fixture | Covers |
+|---|---|
+| `vector-gzip.pmtiles` | MVT, gzip directories and tiles, root directory only, missing tiles |
+| `raster-leaves.pmtiles` | PNG, uncompressed tiles, leaf directories, run-length and deduplicated entries |
+| `webp-uncompressed.pmtiles` | WebP, no compression anywhere, `minZoom` above 0 |
+| `invalid-magic.pmtiles`, `truncated.pmtiles` | Files that must fail to open |
+
+`expected.json` holds the header values, tile sizes and SHA-256 hashes the readers must produce. It is generated from the tiles `generate.py` writes, not by reading the files back, and the fixtures were checked with the official `pmtiles` Python reader.
+
+```sh
+yarn test:ios       # swift test (Package.swift builds only the reader)
+yarn test:android   # JUnit via the host app's Gradle; set APP_ROOT if the app isn't at ../er-mobile
+yarn fixtures       # regenerate fixtures and expected.json after changing generate.py
+```
+
+When adding reader features (e.g. metadata, new compression), add a fixture and its expected values to `generate.py` first, then make both readers pass.
+
 ## License
 
 Apache 2.0. See [LICENSE](LICENSE).

@@ -10,8 +10,14 @@
     "ios",
     "android",
     "!android/build",
+    "!android/src/test",
     "react-native-mapbox-pmtiles.podspec"
   ],
+  "scripts": {
+    "test:ios": "swift test",
+    "test:android": "cd \"${APP_ROOT:-../er-mobile}/android\" && ./gradlew -Dorg.gradle.configureondemand=false :react-native-mapbox-pmtiles:testDebugUnitTest",
+    "fixtures": "python3 -I test/fixtures/generate.py"
+  },
   "homepage": "https://github.com/PADAS/react-native-mapbox-pmtiles",
   "repository": {
     "type": "git",

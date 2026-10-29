@@ -31,6 +31,12 @@ android {
   kotlinOptions {
     jvmTarget = "17"
   }
+
+  testOptions {
+    unitTests.all {
+      systemProperty "pmtiles.fixtures", file("../test/fixtures").absolutePath
+    }
+  }
 }
 
 repositories {
@@ -41,4 +47,7 @@ repositories {
 dependencies {
   implementation "com.facebook.react:react-native:+"
   compileOnly "com.mapbox.common:common-ndk27:${safeExtGet('PMTilesMapboxCommonVersion', '24.16.2')}"
+
+  testImplementation "junit:junit:4.13.2"
+  testImplementation "org.json:json:20240303"
 }

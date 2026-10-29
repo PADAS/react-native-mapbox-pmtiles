@@ -79,6 +79,9 @@ sequenceDiagram
 | `android/.../PMTilesInterceptor.kt` | Same behaviour as iOS |
 | `android/.../PMTilesArchive.kt` | Kotlin port of the Swift reader |
 | `react-native-mapbox-pmtiles.podspec`, `android/build.gradle` | Depend on Mapbox Common supplied by `@rnmapbox/maps` |
+| `test/fixtures/` | Shared PMTiles fixtures, `expected.json` and `generate.py` |
+| `Package.swift`, `test/ios/PMTilesArchiveTests.swift` | XCTest for the Swift reader (`yarn test:ios`) |
+| `android/src/test/.../PMTilesArchiveTest.kt` | JUnit test for the Kotlin reader (`yarn test:android`) |
 
 ## Planned
 
@@ -87,9 +90,8 @@ flowchart LR
   Info["getInfo(name)<br/>bounds · zoom · tile type · vector layers"]
   Close["close(name)<br/>before replace or delete"]
   Chain["Chain to an existing interceptor<br/>(e.g. rnmapbox addCustomHeader)"]
-  Tests["Unit tests with leaf-directory<br/>and raster fixtures"]
   Turbo["TurboModule spec + release"]
 
   classDef planned stroke-dasharray: 5 5
-  class Info,Close,Chain,Tests,Turbo planned
+  class Info,Close,Chain,Turbo planned
 ```
