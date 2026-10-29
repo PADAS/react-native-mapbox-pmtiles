@@ -1,4 +1,4 @@
-# react-native-mapbox-pmtiles
+# React Native Mapbox PMTiles
 
 Serve tiles from local [PMTiles](https://github.com/protomaps/PMTiles) files to Mapbox in React Native apps built with [`@rnmapbox/maps`](https://github.com/rnmapbox/maps). Works offline, with no tile server and no changes to Mapbox.
 
