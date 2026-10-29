@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="react-native-mapbox-pmtiles">
   <style>
-    .tile-1 { fill: #e4ece2; }
-    .tile-2 { fill: #dfe8ef; }
-    .tile-3 { fill: #ebeedf; }
-    .tile-4 { fill: #e0ece9; }
+    .tile-1 { fill: #cfe6d3; }
+    .tile-2 { fill: #c4dfec; }
+    .tile-3 { fill: #dcebc6; }
+    .tile-4 { fill: #c9e4df; }
     .curve { fill: none; stroke: #008586; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
     .end { fill: #008586; }
   </style>
