@@ -1,0 +1,26 @@
+{
+  "name": "react-native-mapbox-pmtiles",
+  "version": "0.1.0",
+  "description": "Serve tiles from local PMTiles files to Mapbox",
+  "main": "src/index.ts",
+  "react-native": "src/index.ts",
+  "types": "src/index.ts",
+  "files": [
+    "src",
+    "ios",
+    "android",
+    "!android/build",
+    "react-native-mapbox-pmtiles.podspec"
+  ],
+  "homepage": "https://github.com/PADAS/react-native-mapbox-pmtiles",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PADAS/react-native-mapbox-pmtiles.git"
+  },
+  "author": "EarthRanger",
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "@rnmapbox/maps": ">=10.1.0",
+    "react-native": ">=0.76.0"
+  }
+}
