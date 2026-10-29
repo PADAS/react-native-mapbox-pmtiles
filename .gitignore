@@ -1,2 +1,9 @@
 # demo
 demo/
+
+node_modules/
+android/build/
+android/.cxx/
+.DS_Store
+android/kls-classpath
+android/.kls/
