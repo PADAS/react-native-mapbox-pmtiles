@@ -45,29 +45,6 @@ buildscript {
 }
 ```
 
-### Local development against a checkout
-
-To work on the library alongside an app, link it instead:
-
-```json
-"react-native-mapbox-pmtiles": "link:../react-native-mapbox-pmtiles"
-```
-
-Then let Metro watch the folder and resolve the library's imports from the app:
-
-```js
-// metro.config.js
-const path = require('path');
-const pmtiles = path.resolve(__dirname, '../react-native-mapbox-pmtiles');
-
-const config = {
-  watchFolders: [pmtiles],
-  resolver: { nodeModulesPaths: [path.resolve(__dirname, 'node_modules')] },
-};
-```
-
-and set `"preserveSymlinks": true` in the app's `tsconfig.json` so `tsc` resolves the library's imports. Restart Metro with `--reset-cache` after changing `metro.config.js`.
-
 ## Usage
 
 ### 1. Install the interceptor at startup
