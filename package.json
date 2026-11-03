@@ -1,6 +1,6 @@
 {
-  "name": "react-native-mapbox-pmtiles",
-  "version": "0.1.0",
+  "name": "@earthranger/react-native-mapbox-pmtiles",
+  "version": "0.0.1",
   "description": "Serve tiles from local PMTiles files to Mapbox",
   "main": "src/index.ts",
   "react-native": "src/index.ts",
@@ -11,8 +11,13 @@
     "android",
     "!android/build",
     "!android/src/test",
+    "!android/.kls",
+    "!android/kls-classpath",
     "react-native-mapbox-pmtiles.podspec"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test:ios": "swift test",
     "test:android": "cd \"${APP_ROOT:-../er-mobile}/android\" && ./gradlew -Dorg.gradle.configureondemand=false :react-native-mapbox-pmtiles:testDebugUnitTest",

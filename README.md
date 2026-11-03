@@ -24,10 +24,8 @@ See [docs/architecture.md](docs/architecture.md) for diagrams.
 
 ## Installation
 
-Add the dependency from GitHub (requires read access to the repo):
-
 ```sh
-yarn add github:PADAS/react-native-mapbox-pmtiles
+yarn add @earthranger/react-native-mapbox-pmtiles
 cd ios && pod install
 ```
 
@@ -53,7 +51,7 @@ Call `install` once, before the map renders, with the folder that holds your `.p
 
 ```ts
 import { DocumentDirectoryPath } from 'react-native-fs';
-import { install } from 'react-native-mapbox-pmtiles';
+import { install } from '@earthranger/react-native-mapbox-pmtiles';
 
 install(`${DocumentDirectoryPath}/pmtiles`);
 ```
@@ -68,7 +66,7 @@ Each file is addressed by its name without the extension: `counties.pmtiles` bec
 
 ```tsx
 import { FillLayer, LineLayer, MapView, VectorSource } from '@rnmapbox/maps';
-import { tileUrl } from 'react-native-mapbox-pmtiles';
+import { tileUrl } from '@earthranger/react-native-mapbox-pmtiles';
 
 <MapView>
   <VectorSource
